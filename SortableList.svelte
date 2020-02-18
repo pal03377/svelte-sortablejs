@@ -33,6 +33,8 @@
     let listElement;
     $: if(listElement) sortable = Sortable.create(listElement, sortableOptions);
 
+    $: console.log(items);
+
 </script>
 
 

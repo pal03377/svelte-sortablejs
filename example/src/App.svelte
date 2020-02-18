@@ -4,14 +4,20 @@
     import SortableList from "../../SortableList.svelte";
 
     let items = [1, 2, 3, 4].map(i => ({ identifierNumber: i, text: "item " + i }));
+    let currentNumber = 5;
 
     function addItem() {
-        if (items.length <= 0) items.push(1);
-        else items.push(items[items.length - 1] + 1);
+        items.push({
+            identifierNumber: currentNumber, 
+            text: "item " + currentNumber
+        });
+        currentNumber ++;
+        items = items; // refresh UI
     }
 
     function removeItem() {
         items.pop();
+        items = items; // refresh UI
     }
 
 </script>
@@ -20,7 +26,7 @@
 
 <p>Try dragging them around!</p>
 
-<SortableList bind:items idKey="identifierNumber" let:item>
+<SortableList bind:items={ items } idKey="identifierNumber" let:item>
     Hey, it's { item.text }!
 </SortableList>
 
