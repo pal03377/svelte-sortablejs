@@ -35,10 +35,23 @@
 
 <p>Try dragging them around!</p>
 
-<SortableList { sortableOptions } on:orderChanged={ itemOrderChanged } bind:items idKey="identifierNumber" let:item>
+<SortableList { sortableOptions } on:orderChanged={ itemOrderChanged } 
+        bind:items idKey="identifierNumber" let:item
+        liClass="largerFont">
     Hey, it's { item.text }!
 </SortableList>
 
 
 <button on:click={ addItem }>add item</button>
 <button on:click={ removeItem }>remove item</button>
+
+
+<style>
+
+    /* you need to use :global so that Svelte does not optimize away the in its view "unused" classes
+       see https://github.com/sveltejs/svelte/issues/2870 */
+    :global(.largerFont) {
+        font-size: 1.5rem;
+    }
+
+</style>
