@@ -20,13 +20,17 @@
         items = items; // refresh UI
     }
 
+    function itemOrderChanged(newItems) {
+        console.log("item order changed!", newItems);
+    }
+
 </script>
 
 <h1>svelte-sortablejs example</h1>
 
 <p>Try dragging them around!</p>
 
-<SortableList bind:items={ items } idKey="identifierNumber" let:item>
+<SortableList on:orderChanged={ itemOrderChanged } bind:items idKey="identifierNumber" let:item>
     Hey, it's { item.text }!
 </SortableList>
 

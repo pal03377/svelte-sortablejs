@@ -1,5 +1,8 @@
 <script>
 
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
+
     import Sortable from 'sortablejs/modular/sortable.core.esm.js';
 
     // every item is an object with a unique ID for identification
@@ -27,13 +30,12 @@
         let itemObj = itemsToObject();
         items = sortable.toArray().map(id => itemObj[id]);
         _store_set(sortable); // still call old set callback function
+        dispatch("orderChanged", items);
     };
     
     let sortable;
     let listElement;
     $: if(listElement) sortable = Sortable.create(listElement, sortableOptions);
-
-    $: console.log(items);
 
 </script>
 
