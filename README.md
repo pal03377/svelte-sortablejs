@@ -3,6 +3,9 @@ Basic Svelte version of https://sortablejs.github.io/Sortable/
 
 This is a basic Svelte component that can display a sortable list with the help of [Sortable.js](https://sortablejs.github.io/Sortable/).
 
+## Demo
+[The demo in the example folder is online to try out directly.](https://pal03377.github.io/svelte-sortablejs/)
+
 ## Usage
 `npm install --save @palsch/svelte-sortablejs`
 
