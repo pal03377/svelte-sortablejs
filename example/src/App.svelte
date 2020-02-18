@@ -1,6 +1,6 @@
 <script>
 
-    // Normally, this would be import: `import SortableList from 'svelte-sortablejs';`
+    // Normally, this would be import: `import SortableList from '@palsch/svelte-sortablejs';`
     import SortableList from "../../SortableList.svelte";
 
     let items = [1, 2, 3, 4].map(i => ({ identifierNumber: i, text: "item " + i }));

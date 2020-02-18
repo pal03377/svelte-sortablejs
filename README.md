@@ -11,7 +11,7 @@ This is a basic Svelte component that can display a sortable list with the help 
 ## Usage
 `npm install --save @palsch/svelte-sortablejs`
 
-then import: `import SortableList from 'svelte-sortablejs';`
+then import: `import SortableList from '@palsch/svelte-sortablejs';`
 
 The `SortableList` component expects to get `items` as a list of objects, each having an attribute `id` (can be renamed with the component property `idKey`). I recommend to just bind to `items`. 
 You can also pass options to sortable itself with `sortableOptions`. A `SortableList` can also be given inner HTML to display the item. Use `let:item` as component attribute for that.
