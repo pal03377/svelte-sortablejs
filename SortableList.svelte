@@ -11,6 +11,7 @@
     export let ulClass = "";
     export let liClass = "";
     export let sortableOptions = {};
+    if (sortableOptions.dataIdAttr) throw new Error("sortableOptions.dataIdAttr is currently not supported.");
     sortableOptions.store = sortableOptions.store || {
         set: sortable => undefined // placeholder
     };
