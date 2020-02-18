@@ -1,3 +1,5 @@
+![MIT License](https://img.shields.io/github/license/pal03377/svelte-sortablejs)
+
 # svelte-sortablejs
 Basic Svelte version of https://sortablejs.github.io/Sortable/
 
