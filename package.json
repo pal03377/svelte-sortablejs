@@ -1,0 +1,20 @@
+{
+  "name": "svelte-sortablejs",
+  "version": "1.0.0",
+  "description": "Basic version of https://sortablejs.github.io/Sortable",
+  "main": "SortableList.svelte",
+  "svelte": "SortableList.svelte",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pal03377/svelte-sortablejs.git"
+  },
+  "author": "Paul Schwind",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pal03377/svelte-sortablejs/issues"
+  },
+  "homepage": "https://github.com/pal03377/svelte-sortablejs#readme",
+  "dependencies": {
+    "sortablejs": "^1.10.2"
+  }
+}
