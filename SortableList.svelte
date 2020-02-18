@@ -37,7 +37,7 @@
 
 
 <ul bind:this={ listElement } class={ ulClass }>
-    {#each items as item}
+    {#each items as item (item[idKey])}
 
 	<li class={ liClass } data-id={ item[idKey] }>
         <slot { item }>{ item }</slot>
