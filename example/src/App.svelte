@@ -6,6 +6,11 @@
     let items = [1, 2, 3, 4].map(i => ({ identifierNumber: i, text: "item " + i }));
     let currentNumber = 5;
 
+    const sortableOptions = {
+        animation: 100, 
+        easing: "cubic-bezier(1, 0, 0, 1)"
+    };
+
     function addItem() {
         items.push({
             identifierNumber: currentNumber, 
@@ -30,7 +35,7 @@
 
 <p>Try dragging them around!</p>
 
-<SortableList on:orderChanged={ itemOrderChanged } bind:items idKey="identifierNumber" let:item>
+<SortableList { sortableOptions } on:orderChanged={ itemOrderChanged } bind:items idKey="identifierNumber" let:item>
     Hey, it's { item.text }!
 </SortableList>
 
