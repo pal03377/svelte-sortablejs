@@ -32,7 +32,9 @@
     
     let sortable;
     let listElement;
-    $: if(listElement) sortable = Sortable.create(listElement, sortableOptions);
+    $: if(listElement && !sortable) {
+        sortable = Sortable.create(listElement, sortableOptions);
+    }
 
     $: for (let item of items) {
         if (!item || item[idKey] == null) {
