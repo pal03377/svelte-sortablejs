@@ -1,6 +1,7 @@
 {
   "name": "svelte-sortablejs-example",
   "version": "1.0.0",
+  "private": true, 
   "description": "example for https://github.com/pal03377/svelte-sortablejs",
   "scripts": {
     "build": "rollup -c",
