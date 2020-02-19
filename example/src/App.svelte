@@ -66,7 +66,6 @@
     ¡{ item.text } s,ʇı 'ʎǝH
 </SortableList>
 
-
 <style>
 
     /* you need to use :global so that Svelte does not optimize away the in its view "unused" classes
