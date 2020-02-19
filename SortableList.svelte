@@ -10,26 +10,22 @@
     export let idKey = "id"; // id attribute changeable if needed
     export let ulClass = "";
     export let liClass = "";
+    export let getItemById = undefined;
     export let sortableOptions = {};
     if (sortableOptions.dataIdAttr) throw new Error("sortableOptions.dataIdAttr is currently not supported.");
     sortableOptions.store = sortableOptions.store || {
         set: sortable => undefined // placeholder
     };
-
-    function itemsToObject() {
-        // returns an object of items such that Object.values(items) == items
-        // and the keys are the IDs
-        let obj = {};
-        for (let item of items) {
-            obj[item[idKey]] = item;
-        }
-        return obj;
+    if (sortableOptions.group && !getItemById) {
+        throw new Error("When using group, please provide a function called `getItemById` (as a prop) that gives an item in case it gets dropped from somewhere else. Otherwise, the SortableList cannot know what the item is exactly.");
     }
+    getItemById = getItemById || ((id) => {
+        return items.find(item => item[idKey] == id); // should only loosely check as IDs are auto-converted to strings
+    });
 
     let _store_set = sortableOptions.store.set;
     sortableOptions.store.set = (sortable) => {
-        let itemObj = itemsToObject();
-        items = sortable.toArray().map(id => itemObj[id]);
+        items = sortable.toArray().map(getItemById);
         _store_set(sortable); // still call old set callback function
         dispatch("orderChanged", items);
     };
@@ -37,6 +33,12 @@
     let sortable;
     let listElement;
     $: if(listElement) sortable = Sortable.create(listElement, sortableOptions);
+
+    $: for (let item of items) {
+        if (!item || item[idKey] == null) {
+            throw new Error("Item", item, "has no valid identifier", idKey);
+        }
+    }
 
 </script>
 
