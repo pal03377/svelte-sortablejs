@@ -12,6 +12,7 @@
     export let liClass = "";
     export let getItemById = undefined;
     export let sortableOptions = {};
+    sortableOptions = Object.assign({}, sortableOptions); // prevent leak to outside
     if (sortableOptions.dataIdAttr) throw new Error("sortableOptions.dataIdAttr is currently not supported.");
     sortableOptions.store = sortableOptions.store || {
         set: sortable => undefined // placeholder
