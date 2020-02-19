@@ -4,7 +4,7 @@
     import SortableList from "../../SortableList.svelte";
 
     let items = [1, 2, 3, 4].map(i => ({ identifierNumber: i, text: "item " + i }));
-    let items2 = [-1, -2, -3, -4].map(i => ({ identifierNumber: i, text: i + " ɯǝʇı " }));
+    let items2 = [-1, -2, -3, -4].map(i => ({ identifierNumber: i, text: "item " + i }));
     let currentNumber = 5;
 
     const sortableOptions = {
@@ -58,12 +58,14 @@
 <br><br>
 
 <h2>Multiple groups</h2>
-<p>Dragging between groups is supported as well. Try dragging these to the list above and vice-versa!</p>
+<p>Dragging between groups is supported as well. Try dragging these to the list above and vice-versa!
+When dragging items from above, they should still be black. When dragging items from below into the above field, they should get black.</p>
+<p>As the text before the item name is specified within a slot, it should always be consistent within each block here.</p>
 
 <SortableList { sortableOptions } on:orderChanged={ itemOrderChanged } 
         bind:items={ items2 } idKey="identifierNumber" let:item { getItemById } 
-        liClass="largerFont crazy">
-    ¡{ item.text } s,ʇı 'ʎǝH
+        liClass={ /* liClass can be a function too - then it gets the id of the item */ (item) => item.identifierNumber >= 0 ? "largerFont" : "largerFont crazy" }>
+    Welcome in the bottom section, { item.text }!
 </SortableList>
 
 <style>
