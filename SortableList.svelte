@@ -36,7 +36,7 @@
 
     $: for (let item of items) {
         if (!item || item[idKey] == null) {
-            throw new Error("Item", item, "has no valid identifier", idKey);
+            throw new Error("Item " + item + " has no valid identifier " + idKey);
         }
     }
 
