@@ -1,6 +1,6 @@
 {
   "name": "@palsch/svelte-sortablejs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Basic version of https://sortablejs.github.io/Sortable",
   "main": "SortableList.svelte",
   "svelte": "SortableList.svelte",
