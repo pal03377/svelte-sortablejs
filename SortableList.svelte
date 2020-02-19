@@ -49,7 +49,7 @@
 <ul bind:this={ listElement } class={ ulClass }>
     {#each items as item (item[idKey])}
 
-	<li class={ liClass } data-id={ item[idKey] }>
+	<li class={ (typeof liClass === "function") ? liClass(item) : liClass } data-id={ item[idKey] }>
         <slot { item }>{ item }</slot>
     </li>
 
