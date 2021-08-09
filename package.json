@@ -1,8 +1,9 @@
 {
   "name": "@palsch/svelte-sortablejs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Basic version of https://sortablejs.github.io/Sortable",
-  "main": "index.js",
+  "main": "SortableList.svelte",
+  "svelte": "SortableList.svelte",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pal03377/svelte-sortablejs.git"
@@ -14,7 +15,9 @@
   },
   "homepage": "https://github.com/pal03377/svelte-sortablejs#readme",
   "dependencies": {
-    "sortablejs": "^1.10.2",
-    "svelte-spa-router": "^2.0.1"
+    "sortablejs": "^1.10.2"
+  },
+  "peerDependencies": {
+    "svelte": "^3.5.1"
   }
 }
