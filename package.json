@@ -1,6 +1,6 @@
 {
   "name": "@palsch/svelte-sortablejs",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Basic version of https://sortablejs.github.io/Sortable",
   "main": "SortableList.svelte",
   "svelte": "SortableList.svelte",
@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/pal03377/svelte-sortablejs#readme",
   "dependencies": {
-    "sortablejs": "^1.10.2"
+    "sortablejs": "^1.10.2",
+    "svelte-spa-router": "^2.0.1"
   }
 }
