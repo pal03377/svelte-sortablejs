@@ -4,6 +4,7 @@
   "description": "Basic version of https://sortablejs.github.io/Sortable",
   "main": "SortableList.svelte",
   "svelte": "SortableList.svelte",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pal03377/svelte-sortablejs.git"

@@ -3,7 +3,7 @@
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
 
-    import Sortable from 'sortablejs/modular/sortable.core.esm.js';
+    import Sortable from 'sortablejs';
 
     // every item is an object with a unique ID for identification
     export let items = [];
